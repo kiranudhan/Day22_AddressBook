@@ -73,6 +73,25 @@ public class ContactsOperationsImpl implements ContactOperations {
 				}
 			}
 		}
-		
+	}
+	
+	
+	public void deleteContact() {
+	     boolean flag=false; 
+	     System.out.println("Enter a name :: ");
+	     String name=sc.nextLine();
+        for(int i=0;i<contact.size();i++) {
+       	 Contact person=contact.get(i);
+       	 if(name.equalsIgnoreCase(person.getFirstname())) {
+       		 System.out.println("Entered name found in the contact");
+       		   flag=true;      
+       		 contact.remove(person);
+       	 }
+        }
+        
+        if(flag==false){
+       		 System.out.println("Entered name not found");
+        }
+        
 	}
 }

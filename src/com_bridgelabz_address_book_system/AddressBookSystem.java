@@ -11,7 +11,7 @@ public class AddressBookSystem {
 		 Scanner sc=new Scanner(System.in);
 		 while(true) {
 		 System.out.println("Enter option you want :: ");
-		 System.out.println("1.Add contact 2.Edit Contact");
+		 System.out.println("1.Add contact 2.Edit Contact 3.Delete Contact");
 		 int choice=sc.nextInt();
 		 switch(choice) {
 		 case 1:
@@ -20,6 +20,8 @@ public class AddressBookSystem {
 		 case 2:
 		        contacts.editContact();
 		        break;
+		 case 3:
+			    contacts.deleteContact();
 		  default:
 			  System.out.println("Enter a valid option");
 		 }
