@@ -4,4 +4,5 @@ public interface ContactOperations {
 	void addContact();
 	void editContact();
 	void deleteContact();
+	 void display();
 }

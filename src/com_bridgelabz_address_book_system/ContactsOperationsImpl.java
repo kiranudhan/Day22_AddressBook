@@ -9,6 +9,10 @@ public class ContactsOperationsImpl implements ContactOperations {
 
 	@Override
 	  public void addContact() {
+		  System.out.println("How many persons data do you want to enter : :");
+  	       int num=sc.nextInt();
+  	       sc.nextLine();
+  	       for(int i=1;i<=num;i++) {
 		   System.out.println("Contact details of person :: ");	   
     	   System.out.println("Enter Firstname :: ");
 		    String firstname=sc.nextLine();
@@ -27,8 +31,8 @@ public class ContactsOperationsImpl implements ContactOperations {
 		    sc.nextLine();
 		    Contact details=new Contact(firstname,lastname,address,city,state,z,no);
 		    contact.add(details);
-		  
-   	       }
+  	       }
+   	  }
 
 	@Override
 	public void editContact() {
@@ -94,4 +98,29 @@ public class ContactsOperationsImpl implements ContactOperations {
         }
         
 	}
+
+	@Override
+	public void display() {
+		boolean flag=false;
+		System.out.println("Enter the firstname of person :: ");
+		String name=sc.next();
+		for(int i=0;i<contact.size();i++) {
+			Contact person=contact.get(i);
+			if(person.getFirstname().equals(name)) {
+				flag=true;
+				System.out.println("First Name ::"+person.getFirstname());
+				System.out.println("Last Name :: "+person.getLastname());
+				System.out.println("Address :: "+person.getAddress());
+				System.out.println("City :: "+person.getCity());
+				System.out.println("State :: "+person.getState());
+				System.out.println("Zip :: "+person.getZip());
+				System.out.println("Phone number :: "+person.getMobileno());
+			}
+		}
+		if(flag == false) {
+			System.out.println("Contact doesn't exist...");
+		}
+	}
+		
 }
+
