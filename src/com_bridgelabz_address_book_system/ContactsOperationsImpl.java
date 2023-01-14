@@ -38,6 +38,7 @@ public class ContactsOperationsImpl implements ContactOperations {
 	public void editContact() {
 		System.out.println("Enter first name of person ::");
 		String name=sc.nextLine();
+		sc.nextLine();
 		for(Contact person:contact) {
 			if(name.equalsIgnoreCase(person.getFirstname())) {
 				System.out.println("Choose field you want to add:");
@@ -121,6 +122,8 @@ public class ContactsOperationsImpl implements ContactOperations {
 			System.out.println("Contact doesn't exist...");
 		}
 	}
+	
+	
 		
 }
 
